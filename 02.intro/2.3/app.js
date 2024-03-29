@@ -12,7 +12,7 @@ while (a <= 200) {
     a += 2;
 }
 // Bonus with for 
-for (let b = 2; b <= 100; b += 2) {
+for (let b = 2; b < 100; b += 2) {
     console.log(b);
   }
 })();
