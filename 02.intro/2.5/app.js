@@ -1,19 +1,19 @@
 (() => {
     let favoriteNumber;
 
-    // Continua a chiedere il numero preferito finché l'utente non inserisce 42
+    // Continue asking for the preferred number until the user enters 42
     while (true) {
         favoriteNumber = parseInt(prompt("Please enter your favorite number:"));
     
-        // Controlla se il numero inserito è diverso da 42
+        // Check if the entered number is different from 42
         if (favoriteNumber !== 42) {
             alert("Are you sure?");
         } else {
-            // Se il numero inserito è 42, interrompi il ciclo
+            //If the number entered is 42, stop the loop
             break;
         }
     }
     
-    // Una volta che l'utente ha inserito il numero 42, viene mostrato un messaggio di congratulazioni
+    //Once the user enters the number 42, a congratulatory message is shown
     alert("Congratulations! 42 is a great choice!");
 })();
