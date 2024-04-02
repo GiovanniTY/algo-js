@@ -1,22 +1,33 @@
 (() => {
-    function pickLearner(inputAr,n) {
-    
-      if (n <= 0 || n > inputAr.length) {
-         console.error("Le nombre n doit être supérieur à 0 et inférieur à la longueur de inputAr.");
-         return [];
-      }
-      const selectedLearners = [];
-      const usedIndices =  new Set();
- 
-      while (selectedLearners.length < n) {
-         const randomIndex = Math.floor(Math.random() * inputAr.length);
-         if (!usedIndices.has(randomIndex)) {
-             selectedLearners.push(inputAr[randomIndex]);
-             usedIndices.add[randomIndex];
-         }
-      }
-      return selectedLearners;
+    // Définit une fonction pour sélectionner des apprenants au hasard
+    function pickLearner(inputAr, n) {
+        // Vérifie si le nombre de sélection est valide
+        if (n <= 0 || n > inputAr.length) {
+            console.error("Le nombre n doit être supérieur à 0 et inférieur à la longueur de inputAr.");
+            return [];
+        }
+        // Initialise un tableau pour stocker les apprenants sélectionnés
+        const selectedLearners = [];
+        // Initialise un ensemble pour suivre les indices déjà utilisés
+        const usedIndices = new Set();
+
+        // Tant que le nombre d'apprenants sélectionnés est inférieur à n
+        while (selectedLearners.length < n) {
+            // Génère un indice aléatoire
+            const randomIndex = Math.floor(Math.random() * inputAr.length);
+            // Vérifie si l'indice n'a pas déjà été utilisé
+            if (!usedIndices.has(randomIndex)) {
+                // Ajoute l'apprenant correspondant à l'indice au tableau des sélectionnés
+                selectedLearners.push(inputAr[randomIndex]);
+                // Ajoute l'indice aux indices utilisés
+                usedIndices.add(randomIndex);
+            }
+        }
+        // Retourne le tableau des apprenants sélectionnés
+        return selectedLearners;
     }
+
+    // Définit un tableau d'apprenants
     const inputAr = [
         {nom: 'Lyne'},
         {nom: 'Dj3y'},
@@ -45,7 +56,11 @@
         {nom: 'Julie'},
         {nom: 'Jordan'},
         {nom: 'Tasha'},
-        ];
+    ];
+
+    // Définit le nombre d'apprenants à sélectionner
     const n = 10;
+
+    // Affiche les apprenants sélectionnés
     console.log("Apprenants sélectionnés:", pickLearner(inputAr, n));
- })();
+})();
