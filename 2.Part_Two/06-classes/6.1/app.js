@@ -14,6 +14,9 @@ let zone = Math.PI * Math.pow(this.radius,2);
 return zone;
 }
 }
-const myCircle = new Circle(0,0,9);
-console.log("Surface du cercle:", myCircle.surface)
+//Test
+const myCircle = new Circle(0,0,9);//créer un cercle
+console.log("Surface du cercle:", myCircle.surface)//Print surface du cerlce
+myCircle.move(20,5);
+console.log("Nouvelle Position du cercle:", myCircle.xPos, myCircle.yPos);
 })();
